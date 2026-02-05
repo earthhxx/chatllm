@@ -3,14 +3,14 @@ version: "3.9"
 services:
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: chatlml-postgres
+    container_name: chatllm-postgres
     restart: always
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: chatlml
-      POSTGRES_PASSWORD: chatlml
-      POSTGRES_DB: chatlml
+      POSTGRES_USER: chatllm
+      POSTGRES_PASSWORD: chatllm
+      POSTGRES_DB: chatllm
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -18,11 +18,11 @@ services:
 volumes:
   pgdata:
 
-
+# docker compose up -d
 # exec
-# docker exec -it chatlml-postgres bash
-# psql -U chatlml -- User chatlml
-# \c chatlml --connect database chatlml
+# docker exec -it chatllm-postgres bash
+# psql -U chatllm -- User chatllm
+# \c chatllm --connect database chatllm
 #   \q         -- ออก
 #   \du        -- ดู roles
 #   \l         -- ดู databases
